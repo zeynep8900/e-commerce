@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Search Results</title>
+    {% include "layout.html" %}
+    <style>
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: inline-block;
+            width: 30%; /* Adjust the width as needed */
+            margin: 0 1%;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+
+        h2 {
+            margin-bottom: 5px;
+            font-size: 10px; /* Adjust the font size as needed */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    {% if search_message %}
+        <p>{{ search_message }}</p>
+    {% endif %}
+
+    <ul>
+        {% for product in product %}
+            <li>
+                <h2><a href="{{ url_for('product_detail', id=product.id) }}" style="font-size: 20px;">{{ product.product_name }}</a></h2>
+                <img src="{{ product.ImageURL }}" alt="{{ product.product_name }}" class="img-fluid">
+                <p>Price: {{ product.price }}</p>
+                <!-- Add other fields as needed -->
+            </li>
+        {% endfor %}
+    </ul>
+    <footer>
+        {% include 'footer.html' %}
+    </footer>
+</body>
+</html>

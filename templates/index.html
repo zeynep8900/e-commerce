@@ -1,0 +1,357 @@
+<!-- Bu script'i <head> bölümüne ekleyin -->
+    <script src="https://kit.fontawesome.com/your_fontawesome_kit_id.js" crossorigin="anonymous"></script>
+    <!-- jQuery kütüphanesi -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Bootstrap kütüphanesi -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- templates/index.html -->
+    {% extends "layout.html" %}
+    
+
+    
+    {% block content %}
+        <!-- Reklam Bölümü -->
+        <div id="adContainer" class="text-center mt-3" style="display: block; position: relative;">
+            <div style="position: relative; display: inline-block;">
+                <a href="#" id="adLink">
+                    <img id="adImage" src="static/images/Ad.jpeg" alt="Reklam Resmi" class="img-fluid rounded" style="max-width: 100%;">
+                </a>
+                <a href="#" id="toggleAdLink" class="position-absolute" style="top: 0; right: 0; margin: 10px; color: #000000; text-decoration: none; z-index: 1;">Reklamı Gizle</a>
+            </div>
+            
+        </div>
+    
+        <div style="display: flex; ">
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <!-- Sol Kenar Menüsü -->
+                    <div class="mb-3">
+                        <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i> Acil Acil</h3>
+                    </div>
+                    <div class="mb-3">
+                        <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i> Son 48 Saat / 1 Hafta / 1 Ay</h3>
+                    </div>
+                    <hr class="my-4">
+                    <div class="mb-3">
+                        <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i> Oto360</h3>
+                        <ul class="list-unstyled" style="padding-left: 0;">
+                            <!-- Emlak kategorisine ait bağlantılar buraya eklenebilir -->
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">S-Aracım</a></li>
+                            <!-- Tümünü Göster başlığı ve altında bulunan liste -->
+                            <li>
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" href="#" role="button" id="showAllDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 14px; text-decoration: none; color: #001a4d;">
+                                        Tümünü Göster
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="showAllDropdown">
+                                        <a class="dropdown-item" href="#">Araç Hasar Sorgulama</a>
+                                        <a class="dropdown-item" href="#">Araç Karşılaştırma</a>
+                                        <a class="dropdown-item" href="#">Araç Değerleme</a>
+                                        <a class="dropdown-item" href="#">Oto Sözlük</a>
+                                        <a class="dropdown-item" href="#">Araç Alım Rehberi</a>
+                                        <a class="dropdown-item" href="#">Araç Satış Rehberi</a>
+                                        <a class="dropdown-item" href="#">Kredi</a>
+                                        <a class="dropdown-item" href="#">Sıfır Araç Dünyası</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr class="my-4">
+                    <div class="mb-3">
+                        <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i> Emlak360</h3>
+                    </div>  
+                    <hr class="my-4">
+                    <div class="mb-3">
+                        <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i> EMLAK</h3>
+                        <ul class="list-unstyled" style="padding-left: 0;">
+                            <!-- Emlak kategorisine ait bağlantılar buraya eklenebilir -->
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Konut</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">İş Yeri</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Arsa</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Konut Projeleri</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Bina</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Devre Mülk</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Turistik Tesis</a></li>
+                        </ul>
+                    </div>
+                    <hr class="my-4">
+                    <div class="mb-3">
+                        <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-car"></i> VASITA</h3>
+                        <ul class="list-unstyled">
+                            <!-- Vasıta kategorisine ait bağlantılar buraya eklenebilir -->
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Otomobil</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Arazi, SUV & Pickup</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Motosiklet</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Minivan & Panelvan</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Ticari Araçlar</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Elektrikli Araçlar</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Kiralık Araçlar</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Deniz Araçları</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Hasarlı Araçlar</a></li>
+                            <li>
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" href="#" role="button" id="showAllVehiclesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 14px; text-decoration: none; color: #001a4d;">
+                                        Tümünü Göster
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="showAllVehiclesDropdown">
+                                        <a class="dropdown-item" href="#">Karavan</a>
+                                        <a class="dropdown-item" href="#">Klasik Araçlar</a>
+                                        <a class="dropdown-item" href="#">Hava Araçları</a>
+                                        <a class="dropdown-item" href="#">Minivan & Panelvan</a>
+                                        <a class="dropdown-item" href="#">ATV</a>
+                                        <a class="dropdown-item" href="#">UTV</a>
+                                        <a class="dropdown-item" href="#">Engelli Plakalı Araçlar</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr class="my-4">
+                    <div class="mb-3">
+                        <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i> Yedek Parça, Aksesuar, Donanım & Tuning</h3>
+                        <ul class="list-unstyled" style="padding-left: 0;">
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Otomotiv Ekipmanları</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Motosiklet Ekipmanları</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Deniz Aracı Ekipmanları</a></li>
+                        </ul>
+                    </div>
+                    <hr class="my-4">
+                    <div class="mb-3">
+                        <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i>İkinci El ve Sıfır Alışveriş</h3>
+                        <ul class="list-unstyled" style="padding-left: 0;">
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Bilgisayar</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Cep Telefonu</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Fotoğraf & Kamera</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Ev Dekorasyon</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Ev Elektroniği</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Elektrikli Ev Aletleri</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Giyim & Aksesuar</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Saat</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Anne & Bebek</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Kişisel Bakım & Kozmetik</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Hobi & Oyuncak</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Oyun & Konsol</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Kitap, Dergi & Film</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Müzik</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Spor</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Takı, Mücevher & Altın</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Koleksiyon</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Antika</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Bahçe & Yapı Market</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Teknik Elektronik</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Ofis & Kırtasiye</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Yiyecek & İçecek</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Diğer Her Şey</a></li>
+                        </ul>
+                    </div>
+                    <hr class="my-4">
+                    <div class="mb-3">
+                        <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i> İş Makineleri & Sanayi</h3>
+                        <ul class="list-unstyled" style="padding-left: 0;">
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">İş Makineleri</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Tarım Makineleri</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Sanayi</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Elektrik & Enerji</a></li>
+                        </ul>
+                    </div>
+                    <hr class="my-4">
+                    <div class="mb-3">
+                        <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px; "><i class="fas fa-home"></i> Ustalar ve Hizmetler </h3>
+                        <ul class="list-unstyled" style="padding-left: 0;">
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Ev Tadilat & Dekorasyon</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Nakliye</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Araç Servis & Bakım</a></li>
+                            <li>
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" href="#" role="button" id="showAllVehiclesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 14px; text-decoration: none; color: #001a4d;">
+                                        Tümünü Göster
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="showAllVehiclesDropdown">
+                                        <a class="dropdown-item" href="#">Tamirat & Teknik Servis</a>
+                                        <a class="dropdown-item" href="#">Düğün & Etkinlik </a>
+                                        <a class="dropdown-item" href="#">Diğer</a>
+                                    </div>
+                                </div>
+                            </li>
+            
+                        </ul>
+                    </div>
+                    <hr class="my-4">
+                    <div class="mb-3">
+                        <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i> Özel Ders Verenler </h3>
+                        <ul class="list-unstyled" style="padding-left: 0;">
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Lise & Üniversite</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">İlkokul & Ortaokul</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Yabancı Dil</a></li>
+                            <li>
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" href="#" role="button" id="showAllVehiclesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 14px; text-decoration: none; color: #001a4d;">
+                                        Tümünü Göster
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="showAllVehiclesDropdown">
+                                        <a class="dropdown-item" href="#">Bilgisayar</a>
+                                        <a class="dropdown-item" href="#">Direksiyon </a>
+                                        <a class="dropdown-item" href="#">Spor</a>
+                                        <a class="dropdown-item" href="#">Sanat</a>
+                                        <a class="dropdown-item" href="#">Dans </a>
+                                        <a class="dropdown-item" href="#">Müzik & Enstrüman</a>
+                                        <a class="dropdown-item" href="#">Tiyatro & Oyunculuk</a>
+                                        <a class="dropdown-item" href="#">Kişisel Gelişim </a>
+                                        <a class="dropdown-item" href="#">Mesleki Dersler</a>
+                                        <a class="dropdown-item" href="#">Özel Eğitim</a>
+                                        <a class="dropdown-item" href="#">Çocuk Gelişimi </a>
+                                        <a class="dropdown-item" href="#">Güzel Konuşma & Diksiyon</a>
+                                        <a class="dropdown-item" href="#">Fotoğrafçılık</a>
+                                    </div>
+                                </div>
+                            </li>
+            
+                        </ul>
+                    </div>
+                    <hr class="my-4">
+                    <div class="mb-3">
+                        <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i> İş İlanları </h3>
+                        <ul class="list-unstyled" style="padding-left: 0;">
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Avukatlık & Hukuki Danışmanlık</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Eğitim</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Eğlence ve Aktiviteler</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Güzellik ve Bakım</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">IT ve Yazılım Geliştirme</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">İnsan Kaynakları</a></li>
+                            <li>
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" href="#" role="button" id="showAllVehiclesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 14px; text-decoration: none; color: #001a4d;">
+                                        Tümünü Göster
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="showAllVehiclesDropdown">
+                                        <a class="dropdown-item" href="#">İnşaat ve Yapı</a>
+                                        <a class="dropdown-item" href="#">İşletme ve Stratejik Yönetim </a>
+                                        <a class="dropdown-item" href="#">Koruma ve Güvenlik</a>
+                                        <a class="dropdown-item" href="#">Lojistik ve Taşıma</a>
+                                        <a class="dropdown-item" href="#">Mağazacılık ve Perakendecilik </a>
+                                        <a class="dropdown-item" href="#">Muhasebe, Finans ve Bankacılık</a>
+                                        <a class="dropdown-item" href="#">Mühendislik</a>
+                                        <a class="dropdown-item" href="#">Müşteri Hizmetleri</a>
+                                        <a class="dropdown-item" href="#">Ofis Yönetimi ve İdari İşler</a>
+                                        <a class="dropdown-item" href="#">Part Time ve Ek İş Fırsatları</a>
+                                        <a class="dropdown-item" href="#">Pazarlama ve Ürün Yönetimi</a>
+                                        <a class="dropdown-item" href="#">Radyo, Sinema & Televizyon</a>
+                                        <a class="dropdown-item" href="#">Restoran ve Konaklama</a>
+                                        <a class="dropdown-item" href="#">Sağlık</a>
+                                        <a class="dropdown-item" href="#">Satış</a>
+                                        <a class="dropdown-item" href="#">Tamir ve Bakım</a>
+                                        <a class="dropdown-item" href="#">Tarım ve Hayvancılık</a>
+                                        <a class="dropdown-item" href="#">Tasarım ve Yaratıcılık</a>
+                                        <a class="dropdown-item" href="#">Tekstil ve Konfeksiyon</a>
+                                        <a class="dropdown-item" href="#">Üretim ve İmalat</a>
+                                    </div>
+                                </div>
+                            </li>
+            
+                        </ul>
+                    </div>
+                    <hr class="my-4">
+                    <div class="mb-3">
+                        <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i> Yardımcı Arayanlar</h3>
+                        <ul class="list-unstyled" style="padding-left: 0;">
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Bebek & Çocuk Bakıcısı</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Yaşlı & Hasta Bakıcısı</a></li>
+                            <li><a href="#" style="font-size: 14px; text-decoration: none;">Temizlikçi & Ev İşlerine Yardımcı</a></li>
+                        </ul>
+                    </div>
+    
+            <hr class="my-4">
+            <div class="mb-3">
+                <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i> Hayvanlar Alemi </h3>
+                <ul class="list-unstyled" style="padding-left: 0;">
+                    <li><a href="#" style="font-size: 14px; text-decoration: none;">Evcil Hayvanlar</a></li>
+                    <li><a href="#" style="font-size: 14px; text-decoration: none;">Akvaryum Balıkları</a></li>
+                    <li><a href="#" style="font-size: 14px; text-decoration: none;">Aksesuarlar</a></li>
+                    <li><a href="#" style="font-size: 14px; text-decoration: none;">Bakım Ürünleri</a></li>
+                    <li><a href="#" style="font-size: 14px; text-decoration: none;">Yem & Mama</a></li>
+                    <li><a href="#" style="font-size: 14px; text-decoration: none;">Kümes Hayvanları /a></li>
+                        <li><a href="#" style="font-size: 14px; text-decoration: none;">Büyükbaş Hayvanlar</a></li>
+                        <li><a href="#" style="font-size: 14px; text-decoration: none;">Küçükbaş Hayvanlar </a></li>
+                    <li>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" href="#" role="button" id="showAllVehiclesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 14px; text-decoration: none; color: #001a4d;">
+                                Tümünü Göster
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="showAllVehiclesDropdown">
+                                <a class="dropdown-item" href="#">Deniz Canlıları</a>
+                                <a class="dropdown-item" href="#">Sürüngenler </a>
+                                <a class="dropdown-item" href="#">Böcekler</a>
+                            </div>
+                        </div>
+                    </li>
+    
+                </ul>
+            </div>
+    
+            <hr class="my-4">
+            <div class="mb-3">
+                <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i> Seçtiklerimiz </h3>
+            </div>
+    
+            <hr class="my-4">
+            <div class="mb-3">
+                <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i> Hikayeni Paylaş </h3>
+            </div>
+            <div class="mb-3">
+                <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i> Efsane İlanlar </h3>
+            </div>
+            <div class="mb-3">
+                <h3 class="font-weight-bold mb-2 text-primary" style="font-size: 14px;"><i class="fas fa-home"></i> İlginç İlanlar </h3>
+            </div>
+
+                    <!-- Diğer menüleri buraya ekleyin... -->
+                </div>
+                <div class="col-md-9">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; text-align: right;">
+                        <h3 style="font-size: 14px; color: #666666; margin: 0;"><i class="fas fa-home"></i> Anasayfa Vitrini</h3>
+                        <div style="text-align: right; margin-left: auto; font-size: 14px;">
+                            <a href="#" style="font-size: 14px; color: #666666; text-decoration: none;">Tüm vitrin ilanlarını göster</a>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+
+                    <div class="col-md-13">
+                        <!-- Sağ Ürün Bölümü -->
+                        <div class="row">
+                            {% for p in product %}
+                            <div class="col-md-2 mb-2">
+                                <a href="{{ url_for('product_detail', id=p.id) }}">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <img src="{{ p.ImageURL }}" alt="{{ p.product_name }}" class="card-img-top">
+                                        </div>
+                                    </div>
+                                    <h5 class="card-title" style="font-size: 12px;">{{ p.product_name }}</h5>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+    
+    
+                </div>
+                
+
+                    <!-- Sağ Kenar Menüsü -->
+
+    
+    
+                
+            </div>
+        </div>
+        <footer>
+            {% include 'footer.html' %}
+        </footer>
+        
+
+
+    {% endblock %}
+    

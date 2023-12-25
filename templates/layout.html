@@ -1,0 +1,96 @@
+<!-- templates/layout.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Alım Satım{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+
+
+
+
+    .form-control::placeholder {
+        font-size: 0.7rem;
+        color: #808080; 
+    }
+
+ 
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #3f475f; padding: 3px;">
+        <div class="container align-items-center">
+            <a class="navbar-brand" style="background-color: yellow; color: #000000; font-weight: bold;" href="/">sahibinden.com</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="form-inline" action="/search" method="post">
+                    <div class="input-group">
+                        <!-- Use a single form for search and handle it with JavaScript -->
+                        <input class="form-control mr-sm-2" type="text" name="search_term" placeholder="Ürün adı ile ara" aria-label="Search" >
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                            <?xml version="1.0" ?><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <title/>
+                                <path d="M20.56,18.44l-4.67-4.67a7,7,0,1,0-2.12,2.12l4.67,4.67a1.5,1.5,0,0,0,2.12,0A1.49,1.49,0,0,0,20.56,18.44ZM5,10a5,5,0,1,1,5,5A5,5,0,0,1,5,10Z" fill="#464646"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <a href="#" class="ml-3" style="font-size: 12px; color: white;">Detaylı Arama</a>
+                </form>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link" href="#" style="font-size: 12px; color: white;">Giriş Yap</a>
+                <span class="navbar-text" style="font-size: 12px; color: white;">|</span>
+                <a class="nav-link" href="#" style="font-size: 12px; color: white;">Hesap Aç</a>
+                <button class="btn btn-primary ml-3" style="font-weight: bold; font-size: 12px;">Ücretsiz İlan Ver</button>
+            </div>
+        </div>
+    </nav>
+    
+    
+
+    
+    
+    
+    <div class="container mt-5">
+        {% block content %}{% endblock %}
+    
+        <!-- Reklam Bölümü -->
+        <div id="adContainer" class="text-center mt-3" style="display: block; position: relative;">
+            <div style="position: relative; display: inline-block;">
+
+
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Sayfa yüklendiğinde reklamı göster
+            $("#adContainer").show();
+    
+            // Reklamı gizle/göster düğmesine basıldığında reklam durumunu değiştir
+            $("#toggleAdLink").click(function(){
+                $("#adImage").toggle();
+                var isAdVisible = $("#adImage").is(":visible");
+                $("#toggleAdLink").text(isAdVisible ? "Reklamı Göster" : "Reklamı Gizle");
+                $("#adLink").attr("href", isAdVisible ? "#" : "https://example.com"); // Linki güncelle
+            });
+        });
+    </script>
+    
+    </body>
+<!-- templates/layout.html -->
+
+<!-- Alt kısım -->
+
+
+</html>
