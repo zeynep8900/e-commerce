@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'sahibindenWebAssigment'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_154832CA5E88462EAC90E3994A343DC6 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FA839BDE4E014C1294A30BC7ADFC0F38 }}
